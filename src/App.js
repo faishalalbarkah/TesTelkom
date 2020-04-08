@@ -8,8 +8,13 @@ class App extends Component {
   getUser = (e) => {
     e.preventDefault();
     const user = e.target.elements.username.value;
-    console.log(user);
+    // console.log(user);
+    Axios.get(`https://api.github.com/users/${user}`).then((res) => {
+      console.log(res);
+    });
   };
+
+  //https://api.github.com/users/faishalalbarkah
   render() {
     return (
       <div className="App">
